@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quiz-app</title>
+     <link href="/src/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+     
+        <div class="min-h-screen bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 flex items-center justify-center p-6">
+
+  <div class="w-full max-w-4xl">
+
+    <!-- Header -->
+    <div class="flex justify-between items-center mb-8">
+      <div>
+        <h1 class="text-4xl font-bold text-white">Quiz Master</h1>
+        <p class="text-slate-400">Test Your Knowledge</p>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-sm px-6 py-3 rounded-xl border border-white/20">
+        <span id="score" class="text-yellow-400 cursor-pointer font-bold">⭐ Score: 250</span>
+      </div>
+    </div>
+
+    <!-- Quiz Card -->
+    <div class="bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl p-8 shadow-2xl">
+
+      <!-- Progress -->
+      <div class="flex justify-between mb-3">
+        <span id="questionNo" class="text-white font-medium">Question 3 of 10</span>
+        <span id="progressText" class="text-cyan-400">10%</span>
+      </div>
+
+      <div class="w-full h-3 bg-slate-700 rounded-full mb-8">
+        <div id="progress" class="w-[30%] h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
+      </div>
+
+      <!-- Question -->
+      <div class="mb-10">
+        <span class="bg-cyan-500/20 text-cyan-300 cursor-pointer px-4 py-2 rounded-full text-sm">
+          General Knowledge
+        </span>
+
+        <h2 id="question" class="text-3xl text-white font-bold mt-5 leading-relaxed">
+          What is the capital of India?
+        </h2>
+      </div>
+
+      <!-- Options -->
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <div class="bg-red-500 hover:scale-105 transition-all duration-300 rounded-2xl p-5 cursor-pointer shadow-lg">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white font-bold">
+              A
+            </div>
+            <span id="a" class="text-white text-lg font-semibold">
+              Mumbai
+            </span>
+          </div>
+        </div>
+
+        <div class="bg-blue-500 hover:scale-105 transition-all duration-300 rounded-2xl p-5 cursor-pointer shadow-lg">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white font-bold">
+              B
+            </div>
+            <span id="b" class="text-white text-lg font-semibold">
+              New Delhi
+            </span>
+          </div>
+        </div>
+
+        <div class="bg-yellow-500 hover:scale-105 transition-all duration-300 rounded-2xl p-5 cursor-pointer shadow-lg">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white font-bold">
+              C
+            </div>
+            <span id="c" class="text-white text-lg font-semibold">
+              Kolkata
+            </span>
+          </div>
+        </div>
+
+        <div class="bg-green-500 hover:scale-105 transition-all duration-300 rounded-2xl p-5 cursor-pointer shadow-lg">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center text-white font-bold">
+              D
+            </div>
+            <span id="d" class="text-white text-lg font-semibold">
+              Chennai
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer -->
+      <div class="flex justify-between items-center mt-10">
+
+        <button id="prevBtn" class="px-6 cursor-pointer py-3 rounded-xl bg-slate-700 text-white hover:bg-slate-600">
+          Previous
+        </button>
+
+        <button id="nextBtn" class="px-8 py-3 cursor-pointer rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold">
+          Next Question →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+        
+     </div>
+
+</div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
