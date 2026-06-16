@@ -1,6 +1,7 @@
 const nextBtn = document.getElementById("nextBtn");
 const prevBtn = document.getElementById("prevBtn");
-const q = document.getElementById("question")
+const q = document.getElementById("question");
+const options = document.querySelectorAll("option");
 
 let currentQuestion = 0;
 let score = 0;
@@ -11,22 +12,27 @@ const questions = [
   {
     question: "What is the capital of France?",
     options: ["Berlin", "Madrid", "Paris", "Rome"],
-    answer: "Paris"
+    answer: "Paris",
   },
   {
     question: "What is the largest planet in our solar system?",
     options: ["Earth", "Jupiter", "Mars", "Saturn"],
-    answer: "Jupiter"
+    answer: "Jupiter",
   },
   {
     question: "Who wrote 'To Kill a Mockingbird'?",
-    options: ["Harper Lee", "Mark Twain", "Ernest Hemingway", "F. Scott Fitzgerald"],
-    answer: "Harper Lee"
+    options: [
+      "Harper Lee",
+      "Mark Twain",
+      "Ernest Hemingway",
+      "F. Scott Fitzgerald",
+    ],
+    answer: "Harper Lee",
   },
   {
     question: "Which language is used for web page styling?",
     options: ["HTML", "CSS", "Java", "Python"],
-    answer: "CSS"
+    answer: "CSS",
   },
   {
     question: "What does HTML stand for?",
@@ -34,34 +40,34 @@ const questions = [
       "Hyper Text Markup Language",
       "High Text Machine Language",
       "Hyper Tool Multi Language",
-      "Home Text Markup Language"
+      "Home Text Markup Language",
     ],
-    answer: "Hyper Text Markup Language"
+    answer: "Hyper Text Markup Language",
   },
   {
     question: "Which company developed JavaScript?",
     options: ["Google", "Microsoft", "Netscape", "Apple"],
-    answer: "Netscape"
+    answer: "Netscape",
   },
   {
     question: "Which keyword is used to declare a variable in JavaScript?",
     options: ["int", "var", "string", "define"],
-    answer: "var"
+    answer: "var",
   },
   {
     question: "Which HTML tag is used to create a hyperlink?",
     options: ["<link>", "<a>", "<href>", "<url>"],
-    answer: "<a>"
+    answer: "<a>",
   },
   {
     question: "What is the square root of 64?",
     options: ["6", "7", "8", "9"],
-    answer: "8"
+    answer: "8",
   },
   {
     question: "Which country is known as the Land of the Rising Sun?",
     options: ["China", "Japan", "Thailand", "India"],
-    answer: "Japan"
+    answer: "Japan",
   },
   {
     question: "Who invented the telephone?",
@@ -69,39 +75,39 @@ const questions = [
       "Alexander Graham Bell",
       "Thomas Edison",
       "Nikola Tesla",
-      "Albert Einstein"
+      "Albert Einstein",
     ],
-    answer: "Alexander Graham Bell"
+    answer: "Alexander Graham Bell",
   },
   {
     question: "Which is the longest river in the world?",
     options: ["Amazon", "Nile", "Yangtze", "Ganges"],
-    answer: "Nile"
+    answer: "Nile",
   },
   {
     question: "Which planet is known as the Red Planet?",
     options: ["Venus", "Mars", "Mercury", "Saturn"],
-    answer: "Mars"
+    answer: "Mars",
   },
   {
     question: "How many continents are there on Earth?",
     options: ["5", "6", "7", "8"],
-    answer: "7"
+    answer: "7",
   },
   {
     question: "Which gas do plants absorb from the atmosphere?",
     options: ["Oxygen", "Nitrogen", "Carbon Dioxide", "Hydrogen"],
-    answer: "Carbon Dioxide"
+    answer: "Carbon Dioxide",
   },
   {
     question: "What is the national animal of India?",
     options: ["Lion", "Tiger", "Elephant", "Peacock"],
-    answer: "Tiger"
+    answer: "Tiger",
   },
   {
     question: "Which company created the React library?",
     options: ["Google", "Facebook", "Microsoft", "Amazon"],
-    answer: "Facebook"
+    answer: "Facebook",
   },
   {
     question: "What does CSS stand for?",
@@ -109,14 +115,14 @@ const questions = [
       "Creative Style Sheets",
       "Cascading Style Sheets",
       "Computer Style Sheets",
-      "Colorful Style Sheets"
+      "Colorful Style Sheets",
     ],
-    answer: "Cascading Style Sheets"
+    answer: "Cascading Style Sheets",
   },
   {
     question: "Which data type is used for true or false values in JavaScript?",
     options: ["String", "Number", "Boolean", "Array"],
-    answer: "Boolean"
+    answer: "Boolean",
   },
   {
     question: "Which method is used to print output in the browser console?",
@@ -124,27 +130,45 @@ const questions = [
       "console.print()",
       "console.show()",
       "console.log()",
-      "print.console()"
+      "print.console()",
     ],
-    answer: "console.log()"
-  }
+    answer: "console.log()",
+  },
 ];
+const ques = (q.textContent = questions[currentQuestion].question);
 
 const updatQuestion = () => {
-    q.textContent = questions[currentQuestion].question;
-    a.textContent = questions[currentQuestion].options[0]
-    b.textContent = questions[currentQuestion].options[1]
-    c.textContent = questions[currentQuestion].options[2]
-    d.textContent = questions[currentQuestion].options[3]
+  q.textContent = questions[currentQuestion].question;
+  a.textContent = questions[currentQuestion].options[0];
+  b.textContent = questions[currentQuestion].options[1];
+  c.textContent = questions[currentQuestion].options[2];
+  d.textContent = questions[currentQuestion].options[3];
+};
 
-  }
-nextBtn.addEventListener("click" , () =>{
-  if (currentQuestion < questions.length) {
-   updatQuestion();
-   currentQuestion++;
-    
-   
+options.forEach((option) => {
+  option.addEventListener("click", () => {
+    const selectItem = option.innertext;
+  console.log(option.innerText);
+      checkAns(selectItem);
+  });
+});
 
+function checkAns(selectItem) {
+  if (selectItem === questions[currentQuestion].answer) {
+    score++;
+  console.log("checkAnswer sucess");
 }
-})
 
+nextBtn.addEventListener("click", () => {
+  if (currentQuestion < questions.length) {
+    updatQuestion();
+    currentQuestion++;
+  }
+});
+
+prevBtn.addEventListener("click", () => {
+  if (currentQuestion < questions.length) {
+    updatQuestion();
+    currentQuestion--;
+  }
+})}
