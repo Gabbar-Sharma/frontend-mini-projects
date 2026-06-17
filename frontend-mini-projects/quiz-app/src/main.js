@@ -147,8 +147,7 @@ const updatQuestion = () => {
 
 options.forEach((option) => {
   option.addEventListener("click", () => {
-    const selectItem = option.innertext;
-  console.log(option.innerText);
+    const selectItem = option.innerText;
       checkAns(selectItem);
   });
 });
@@ -158,17 +157,20 @@ function checkAns(selectItem) {
     score++;
   console.log("checkAnswer sucess");
 }
+}
 
 nextBtn.addEventListener("click", () => {
-  if (currentQuestion < questions.length) {
+  if (currentQuestion < questions.length - 1) {
+     currentQuestion++;
     updatQuestion();
-    currentQuestion++;
+   
   }
 });
 
 prevBtn.addEventListener("click", () => {
-  if (currentQuestion < questions.length) {
+  if (currentQuestion > 0) {
     updatQuestion();
-    currentQuestion--;
+            currentQuestion--;
+
   }
-})}
+})
